@@ -21,8 +21,8 @@ pip install mido
 
 Running the RV32IM Assembly files will require [LeoRiether's FPGRARS](https://github.com/LeoRiether/FPGRARS).       Versions 2.0 and above of FPGRARS have a tendency to stack overflow over time, so it is recommended to download v1.13.1 instead. Once you have it installed and in the same directory as your file, simply run:
 ```[FPGRARS_FILE_NAME] musicplayer.s```
-or alternatively,
-```[FPGRARS_FILE_NAME] async_musicplayer.s```
+
+
 
 # RISCV-midiconverter (Português)
 Esse repositório possui um conversor MIDI para DATA baseado em Python feito para funcionar com o [FPGRARS do LeoRiether](https://github.com/LeoRiether/FPGRARS), um simulador RISCV com suporte à saída MIDI. Ele transforma arquivos .mid em arquivos .data que podem ser manipulados por programas de assembly.
@@ -47,5 +47,3 @@ pip install mido
 
 Rodar os arquivos Assembly RV32IM requere o [FPGRARS do Leo Riether](https://github.com/LeoRiether/FPGRARS). As versões 2.0 e acima do FPGRARS tendem a dar stack overflow, então é recommendado o uso da versão v1.13.1. Quando ter o programa no mesmo diretório do arquivo, rode
 ```[ARQUIVO_FPGRARS] musicplayer.s```
-alternativamente,
-```[ARQUIVO_FPGRARS] async_musicplayer.s```
