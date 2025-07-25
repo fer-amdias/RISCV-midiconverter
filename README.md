@@ -11,7 +11,7 @@ Unlike the vast majority of midi converters for RARS or FPGRARS, the converter e
 
 The first four can be loaded directly into the MidiOut ecall, while the fifth is used to determine when the note is supposed to be called. An example of this would be the file `musicplayer.s` in this repository. It will simply store a timestamp once the music starts playing, then calculate how many miliseconds have passed since. Using its pointer, it will go through the file until it finds one or more notes with a matching or lower start_time_ms. If it reaches the end (there is always an appendix .word 0 0 0 to mark it), it will wait for the last note to play before finalizing.
 
-The music player is a program on its own, so it is not made to run, say, during game loops. Fortunately, here is included [the procedure (originally in Portuguese)](https://github.com/fer-amdias/quatro/blob/main/src/tocar_audio.s) used inside a game, [Quatro](https://github.com/fer-amdias/quatro/tree/main). The demonstration file `async_musicplayer.s` has three tracks and can play the three simultaneously, without wrestling control away from the game loop.
+The music player is a program on its own, so it is not made to run, say, during game loops. Fortunately, here is included [the procedure (originally in Portuguese)](https://github.com/fer-amdias/quatro/blob/main/src/tocar_audio.s) used inside a game, [Quatro](https://github.com/fer-amdias/quatro/tree/main). The prcedure has three tracks and can play the three simultaneously, without wrestling control away from the game loop.
 
 ## Usage
 Running the converter will require python and [mido](https://pypi.org/project/mido/) installed. If you don't have mido, simply run:
@@ -19,7 +19,7 @@ Running the converter will require python and [mido](https://pypi.org/project/mi
 pip install mido
 ```
 
-Running the RV32IM Assembly files will require [LeoRiether's FPGRARS](https://github.com/LeoRiether/FPGRARS). Versions 2.0 and above of FPGRARS have a tendency to stack overflow over time, so it is recommended to download v1.13.1 instead. Once you have it installed and in the same directory as your file, simply run:
+Running the RV32IM Assembly files will require [LeoRiether's FPGRARS](https://github.com/LeoRiether/FPGRARS).       Versions 2.0 and above of FPGRARS have a tendency to stack overflow over time, so it is recommended to download v1.13.1 instead. Once you have it installed and in the same directory as your file, simply run:
 ```[FPGRARS_FILE_NAME] musicplayer.s```
 or alternatively,
 ```[FPGRARS_FILE_NAME] async_musicplayer.s```
