@@ -30,7 +30,7 @@ Esse repositório possui um conversor MIDI para DATA baseado em Python feito par
 Diferentemente da maioria dos conversores midi para RARS ou FPGRARS, aqui as notas são transformadas em structs, com TOM, INSTRUMENTO, VOLUME, DURAÇÃO (em milissegundos), e TIMESTAMP_INICIO (em ms)
 ```asm
 .byte tom, instrumento, volume
-.space 1                 # alignment
+.space 1                 # alinhamento
 .word duracao_ms
 .word timestamp_inicio_ms
 ```
