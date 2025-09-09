@@ -4022,5 +4022,5 @@ example:
     .word 1000
     .word 128000
 
-example_FIM:
+example_END:
     .word 0 0 0
