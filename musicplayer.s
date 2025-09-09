@@ -23,7 +23,7 @@ TRACK_POINTER:		.word 0 # points to the next note
 .eqv volume 2
 .eqv duration, 4
 .eqv start_ms 8
-.eqv tamanho_struct_nota 12
+.eqv note_struct_size 12
 
 # Gives FPGRARS time to fully load audio playback 
 WARMUP:
@@ -62,7 +62,7 @@ PLAY:
 		li a7, 31			# MidiOut ecall
 		ecall				# plays the note
 		
-		addi t0, t0, tamanho_struct_nota
+		addi t0, t0, note_struct_size
 		sw t0, TRACK_POINTER, t1	# goes to the next note
 		
 		j PLAY				# keeps checking
